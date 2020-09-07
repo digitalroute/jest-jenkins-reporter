@@ -8,38 +8,38 @@ A plugin that integrates jest test results into Jenkins.
 
 ```bash
 $ npm install --save-dev @digitalroute/jest-jenkins-reporter
-or
+# or
 $ yarn add @digitalroute/jest-jenkins-reporter --dev
 ```
 
 ## Usage
 
-Configuring package.json
+Configuring `package.json`
 
 Add jest test result processor, here is jest-jenkins-reporter. If you want to use your self processor, you can replace "jest-jenkins-reporter".
 
-```json
+```jsonc
+// package.json
 "jest": {
-    ...
-    ...
-    "testResultsProcessor": "jest-jenkins-reporter"
-  }
+    // ...
+    "testResultsProcessor": "@digitalroute/jest-jenkins-reporter"
+}
 ```
 
 Reporter file config:
 
-```json
+```jsonc
+// package.json
 "jestSonar": {
     "reportPath": "reports",
     "reportFile": "report.xml",
     "indent": 4
-  }
-  
+}
 ```
 
 * `reportPath`: Report file generation path.
 * `reportFile`: Report file name.
-* `indent`: XML file indentation space number. 
+* `indent`: XML file indentation space number.
 
 Test script:
 
